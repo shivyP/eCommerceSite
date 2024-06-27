@@ -1,0 +1,166 @@
+﻿@{
+    int year = 0;
+    year = DateTime.Now.Year;
+    string search = "";
+    bool isAdmin = User.IsInRole("Admin");
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/indexStyle.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/navigation.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/audioStyle.css" type="text/css" />
+  
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="bar">
+        <p class="fsize">
+            <a href="" id="increaseText">A+ |</a>
+            <a href="" id="resetText">A |</a>
+            <a href="" id="reduceText">A- |</a>
+            <a href="" id="blackBox">&#9632; </a>|
+            <a href="" id="whiteBox">&#9632; </a>
+        </p>
+    </section>
+    <section id="topContent">
+        <!--logo -->
+
+        <header id="pageTop" class="fsize">
+            <img class="logo" src="~/assets/logo2.png" alt="Company's Logo QTEC">
+            <!-- in mobile view this will change to humburger -->
+            <p id="humSymbol"> &#9776;</p>
+            <nav class="productPages">
+                <ul>
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/watchCategory">Watches</a></li>
+                    <li><a asp-page="/audioCategory">Audio</a></li>
+                    <li><a asp-page="/computerCategory">Computer</a></li>
+                    <li><a asp-page="/cameraCategory">Camera</a></li>
+                    <li><a asp-page="/allItems">All</a></li>
+
+                    <li id="search">
+                        <form method="get" asp-page="/allItems" asp-route-search="@search">
+                            <input type="text" placeholder="Search..." asp-for=@search />
+                        </form>
+                    </li>
+                </ul>
+
+            </nav>
+            <nav class="access">
+
+
+                <ul>
+                    <partial name="_LoginPartial" />
+                    <!--li><a asp-page="/signIn">Sign in</a></!--li>
+                    <li><a asp-page="/Login">Log in</a></li>
+                    <li><a asp-page="/upDateItem">Update</a></li>
+                    <li><a asp-page="/allItems">Items</a></li-->
+                    <li style="border:none;">
+                        <a asp-page="/basketPage">
+                            <img class="cart" src="~/assets/cart.png" alt="List of selected products">
+                        </a>
+                    </li>
+                </ul>
+                <!-- Search bar -->
+
+            </nav>
+
+
+
+        </header>
+    </section>
+    @if (isAdmin)
+    {
+
+        <section id="addLink">
+            <span><a asp-page="/addItems">Add Product</a></span>
+            <span><a asp-page="/manageUser">Manage Users</a></span>
+
+        </section>
+    }
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+    <footer id="bottomPage">
+        <section id="footerContent" class="fsize">
+            <article id="ftLinks">
+                <!--Links to other pages -->
+                <ul>
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/watchCategory">Watches</a></li>
+                    <li><a asp-page="/audioCategory">Audio</a></li>
+                    <li><a asp-page="/computerCategory">Computer</a></li>
+                    <li><a asp-page="/cameraCategory">Camera</a></li>
+                    <li><a asp-page="/allItems">All</a></li>
+                    <li><a asp-page="/aboutUs">About Us</a></li>
+
+                </ul>
+            </article>
+            <article id="author">
+                <p>
+                    <b>Author:</b>
+                    <br>Shivangi Prajapati,
+                    <br>Nottingham Trent University
+                    <br>n0909947@my.ntu.ac.uk
+                    <br />
+                    <ul>
+                    </ul>
+                </p>
+            </article>
+            <article id="socialMedia">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/NottinghamTrentUniversity?fref=ts" target="_blank">
+                    <img src="~/assets/facebook.png" alt="Facebook" title="Facebook">
+                </a>
+                <!-- Twitter-->
+                <a href="https://twitter.com/TrentUni" target="_blank">
+                    <img src="~/assets/twitter.png" alt="Twitter" title="Twitter">
+                </a>
+                <!-- Youtube-->
+                <a href="https://www.youtube.com/user/NottinghamTrentUni" target="_blank">
+                    <img src="~/assets/youtube.png" alt="Youtube" title="Youtube">
+                </a>
+
+                <!-- Instagram-->
+                <a href="https://www.instagram.com/nottinghamtrentuni/" target="_blank">
+                    <img src="~/assets/instagram.png" alt="Instagram" title="Instagram">
+                </a>
+                <!--Linkedin-->
+                <a href="https://www.linkedin.com/edu/school?id=12658" target="_blank">
+                    <img src="~/assets/linkedin.png" alt="Linkedin" title="Linkedin">
+                </a>
+                <!--Snapchat-->
+                <a href="https://www.snapchat.com/add/trentuni" target="_blank">
+                    <img src="~/assets/snapchat.png" alt="Snapchat" title="Snapchat">
+                </a>
+
+            </article>
+
+        </section>
+        <p>&copy; ntu.ac.uk @year | Designed by Shivangi Prajapati</p>
+
+    </footer>
+
+    <script type="text/javascript" src="~/js/accessibility.js" async></script>
+
+    <script type="text/javascript" src="~/js/mediaMobile.js" async></script>
+    <link rel="stylesheet" href="~/css/mediaQuery.css" type="text/css" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

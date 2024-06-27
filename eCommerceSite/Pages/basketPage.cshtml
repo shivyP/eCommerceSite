@@ -1,0 +1,134 @@
+﻿@page
+@model eCommerceSite.Pages.basketPageModel
+@{
+
+}
+<link rel="stylesheet" href="~/css/basket.css" type="text/css" />
+
+<section id="baskContent">
+
+    <section id="basketItems">
+        
+        <h2>Item Summary (@Model.allBasketItem.Count) </h2>
+        <table id="tableItem">
+            <tr><td></td></tr>
+            <thead id="tableHeading">
+
+                <tr>
+                    <th>Item</th>
+                    <th class="hd1">Price</th>
+                    <th class="hd">Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.allBasketItem != null && Model.allBasketItem.Count != 0)
+                {
+                 @foreach (var item in Model.allBasketItem)
+                    {
+                    <section class="display">
+                    <tr>
+
+                        <!-- alt tags cannot be added as the image will be diffrent every time-->
+                        <td>
+                            <section class="image">
+                                <img src="~/assets/@item.ProductImage" alt="Image of @item.Name">
+                                <p>@item.Name</p>
+                            </section>
+                        </td>
+
+
+                        <td class="tdInfo">GBP£@item.Price <br /> Vat @item.vat%</td>
+
+                        <td class="numQuantity tdInfo">
+                            <section class="changePrice">
+                                <a class="reduce" asp-route-id="@item.productId" asp-page-handler="Reduce">-</a>
+                                <span>@item.qunatity</span>
+                                <a class="increase" asp-route-id="@item.productId" asp-page-handler="Update">+</a>
+                            </section>
+                        </td>
+                        <td class="total">GBP£@Math.Round((1+item.vat)*(item.Price * item.qunatity), 2,MidpointRounding.ToEven)
+                        </td>
+                      
+                    </tr>
+                        <tr>
+                            <td colspan="4"><hr /></td>
+                        </tr>
+                    </section>
+                 }
+            }
+            else { 
+                    <tr>
+                        <td colspan="4"><p class="cPrice cInfo">No Item in the basket.</p></td>
+                    </tr>
+                }
+
+            </tbody>
+        
+        </table>
+    </section>
+
+
+
+<section  id="checkout" >
+    <form  asp-page="basketPage">
+    <table id="tableCheckout" bodrer="2px">
+        <thead> 
+            <th colspan="2"><h3>Order Summary</h3></th>
+       </thead>
+            <tbody>
+                <tr>
+                    <td><h4 class="cInfo formInfo"> Subtotal</h4></td>
+                    <td><p class="cPrice cInfo">GBP£@Model.totalCost</p></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="tdInfo bill "><h4>Billing & Payment</h4></td>
+
+                </tr>
+                <tr>
+                    <td class="formtr"><label class="formInfo " asp-for="@Model.name">Full Name</label></td>
+                    <td class="formtr"><input type="text" placeholder="Full Name" asp-for="@Model.name" /></td>
+                </tr>
+                <tr>
+                    <td class="formtr"><label class="formInfo  tdInfo" asp-for="@Model.address">Address</label></td>
+                    <td class="formtr"><input type="text" placeholder="Address" asp-for="@Model.address"/></td>
+                </tr>
+                <tr>
+                    <td class="formtr"> <label for="cardName" class="formInfo  tdInfo" asp-for="@Model.nameCard">Name on Card</label></td>
+                    <td class="formtr"><input type="text" name="cardName" placeholder="Panthi Lad" asp-for="@Model.nameCard"></td>
+                </tr>
+                <tr>
+                    <td class="formtr"><label for="ccnum" class="formInfo  tdInfo" asp-for="@Model.cardNum">Credit card number</label></td>
+                    <td class="formtr"><input type="text" name="cardnumber" placeholder="1111-2222-3333-4444"  asp-for="@Model.cardNum"></td>
+                </tr>
+                <tr>
+                    <td class="formtr"><label for="expmonth" class="formInfo  tdInfo"  asp-for="@Model.expMonth">Exp Month</label></td>
+                    <td class="formtr"><input type="text" name="expmonth" placeholder="January" asp-for="@Model.expMonth"></td>
+                </tr>
+                <tr>
+                    <td class="formtr"><label for="expyear" class="formInfo" asp-for="@Model.expYear">Exp Year</label></td>
+                    <td class="formtr"><input type="text" name="expyear" placeholder="2022" asp-for="@Model.expYear"></td>
+                </tr>
+                <tr>
+                    <td class="formtr"><label for="cvv" class="formInfo" tdInfo" asp-for="@Model.cvv">CVV</label></td>
+                    <td class="formtr"><input type="text" name="cvv" placeholder="123" asp-for="@Model.cvv"></td>
+                    
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="buttonLine"><span class="checkButton"><a type="submit" asp-page-handler="Checkout" >Complete</a></span></td>
+                </tr>
+
+            </tbody>
+       
+
+       
+    </table>
+   </form>
+     
+</section>
+
+</section>
+
+     
+<p id="msg" class="msg-accepted">@ViewData["msg"]</p>    

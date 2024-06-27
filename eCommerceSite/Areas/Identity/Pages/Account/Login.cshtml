@@ -1,0 +1,107 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<link rel="stylesheet" href="~/css/logStyle.css" type="text/css">
+
+<section id="logForm">
+
+    <h3>Log in to your account</h3>
+    <form id="logFormCon" method="post">
+
+        <fieldset>
+            <legend>Log-in</legend>
+
+
+            <label asp-for="Input.Email"></label>
+            <br>
+            <input asp-for="Input.Email" class="form-control" id="email" />
+            <br />
+
+
+            <label asp-for="Input.Password"></label>
+            <br />
+            <input asp-for="Input.Password" class="form-control" id="password" />
+            <br />
+           
+
+            <!--div class="form-group">
+        <div class="checkbox">
+            <label asp-for="Input.RememberMe">
+                <input asp-for="Input.RememberMe" />
+                @Html.DisplayNameFor(m => m.Input.RememberMe)
+            </label>
+        </div>
+    </!--div-->
+
+            <button type="submit" class="btn btn-primary" id="logButton">Log in</button>
+
+            <div>
+               
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <br />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <!--div class="form-group">
+        <p>
+            <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+        </p>
+        <p>
+            <a asp-page="./Register" asp-route-returnUrl="Model.ReturnUrl">Register as a new user</a>
+        </p>
+        <p>
+            <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+        </p>
+    </div-->
+        </fieldset>
+    </form>
+    <img src="~/assets/cartoon.jpg" alt="A image with two people welcoming the new user">
+
+    <aside id="newUser">
+        <h4>New Customers</h4>
+        <p>Don't have an account?</p>
+        <a asp-area="Identity" asp-page="/Account/Register">
+        <button type="submit" id="newPage" >
+            <input type="image" src="~/assets/nUser.png" />Create a new account
+        </button>
+        </a>
+    </aside>
+
+
+    <!--div class="col-md-6 col-md-offset-2">
+        <section>
+            <h4>Use another service to log in.</h4>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                            for details on setting up this ASP.NET application to support logging in via external services.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </!--div-->
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

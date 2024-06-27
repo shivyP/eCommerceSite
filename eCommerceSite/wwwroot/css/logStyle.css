@@ -1,0 +1,143 @@
+/* the page styles the login page  */
+
+#logForm{
+    /* border:1px solid red; */
+    width:80%;
+    border-top:2px solid #ccc; 
+    margin:auto;
+    margin-top:30px;
+    /* min-height:640px;  */
+    font-family:'Nunito', sans-serif;
+}
+#logForm h3{
+    margin-top:3%;
+    text-align: center;
+    font-size:28px;
+    
+}
+#logForm h4{
+    font-family: 'Acme', sans-serif;
+    font-size:20px;
+}
+#logFormCon{
+    margin-top:2%;
+    /* border:2px solid green; */
+    width:38%;
+    padding: 20px;
+}
+#logFormCon label{
+    /* border:2px solid red; */
+    font-family:'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+#logFormCon input{
+     width:85%; 
+    padding:8px;
+    margin-bottom: 10px;
+}
+#logButton{
+    background-color:#87cefa;   
+    font-size: 16px;
+    padding:14px 20px;
+    float: right; 
+    margin-left:25%; 
+    margin-top:2%;
+    border-radius:10px;
+    cursor: pointer;
+    border:none;
+
+    
+}
+#logButton:hover{
+    opacity: 0.7;
+}
+
+fieldset{
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+#sPass{
+    font-size: 25px;
+    /* border:1px solid red;   */
+    cursor: pointer;
+    position:absolute;
+    margin-left:71%;
+    margin-top:-9.5%;
+   
+}
+#msg{
+    /* border:2px solid red; */
+    font-size:16px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left:20px;
+    position:fixed;
+}
+.msg-accepted {
+    color:#00B050;
+    font-size:bold;
+    font-size: 16px;
+  
+}
+.msg-rejected{
+    color:red;
+    font-size:bold;
+    font-size: 16px;
+}
+
+form{
+    position: relative;
+    
+}
+#logForm img{
+    width: 18%;
+    /* border:0.1px solid red; */
+    float:right;
+    margin-top:-20%;
+    margin-right:35%;
+}
+#logForm{
+    border-top:1px solid #b6a6ab; 
+}
+#newUser{
+    /* border:1px solid red; */
+    width:30%;
+    float:right;
+    margin-top:-20%;
+    margin-right: 6%;
+    text-align: center;
+    line-height:40px;
+    font-weight: bold;
+    padding-top:2%;
+
+}
+#newUser input[type=image]{
+    width:10%;
+    padding-right:8px;
+}
+#newUser button{
+
+    background-color: lightcoral;
+    font-size: 16px;
+    border:none;
+    border-radius:10px;
+    width:56%;
+    padding:10px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 1000;
+    margin-top:10px;
+    color:white;
+
+    
+}
+
+
+
+#footerContent{
+    margin-top:10%;
+    border-top:1px solid #dac7cd; 
+    padding-top:10px;
+}

@@ -1,0 +1,208 @@
+﻿body, input {
+    background-color: #f7f8fa;
+}
+
+
+
+table img {
+    width:50%;
+}
+#basketItems {
+    //border:2px solid red;
+    width: 60%;
+    margin-left: 8%;
+    margin-top: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#basketItems h2, #checkout h3 {
+     background-color: #ffffff;
+     border:none;
+     padding:10px 20px;
+     //margin-bottom:-81.9px;
+     font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+     
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    //background-color: #ffffff;
+    
+}
+
+.tdInfo {
+    text-align:center;
+}
+.changePrice {
+    display: flex;
+    flex-direction: row;
+    width: 35%;
+    height:25px;
+    margin:auto;
+    padding:0px;
+    border-radius:8px;
+}
+.changePrice *{
+    width:33%;
+    border: 1px solid black;
+    border-color:#f0f0f0;
+}
+.changePrice a:hover{
+    border-color:black;
+    cursor:pointer;
+}
+.changePrice .reduce{
+    border-radius:12px 0px 0px 12px;
+}
+.changePrice .increase{
+    border-radius:0px 12px 12px 0px;
+}
+.changePrice span {
+  
+   border-style:solid;
+   border-color:#f0f0f0;
+   border-width:1px 0px;
+  
+}
+
+#tableHeading tr th {
+    //background-color:red;
+    padding: 2% 0;
+    border: none;
+    border-bottom: 1px solid #87cefa;
+   
+}
+hr {
+    border-top: 0.8px dashed lightgrey;
+    border-width: 0.8px 0px 0px 0px;
+    width: 90%;
+    margin: auto;
+    margin: 20px 5% 20px 5%;
+}
+#tableItem .image {
+    text-align:center;
+    padding-top:5%;
+    display:flex;
+    flex-direction:row;
+    gap:10%;
+}
+#tableItem .image img {
+  margin-left:22px;
+  border:0.5px solid lightgrey;
+}
+.total {
+    text-align: center;
+}
+
+#checkout {
+    //border:1px solid red;
+    width: 25%;
+ 
+}
+
+.cPrice {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+#checkout {
+    margin-top: 5%;
+    height: inherit;
+    
+    
+}
+#baskContent {
+    display:flex;
+    flex-direction:row;
+    gap:25px;
+  
+}
+
+.cInfo {
+    margin-top: 15%;
+}
+
+#payment {
+   border:2px solid red;
+   margin-top:20%;
+}
+#checkForm {
+    margin-top:50%;
+}
+
+.buttonLine {
+    padding: 20px 0px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.checkButton a {
+    color: white;
+}
+.formInfo {
+   margin-left:20px;
+
+}
+
+/*tr td {
+    border: 2px solid red;
+}*/
+.fromInfo {
+    width:100%;
+}
+#tableCheckout input {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    font-size:15px;
+    height:20px;
+    width:90%;
+}
+.buttonLine {
+    width: 100%;
+    padding-top:40px;
+   
+
+}
+#checkout .checkButton {
+    width: 100%;
+    font-size: 18px;
+    margin: auto;
+    background-color: black;
+    color: white;
+    padding: 4% 40%;
+    margin: 40px 3px;
+    width: 100px;
+}
+
+#checkout .checkButton p a {
+        color: white;
+    }
+
+#checkout .checkButton:hover {
+        cursor: pointer;
+        opacity: 0.8;
+}
+.bill {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #87cefa;
+}
+.formtr {
+    
+    
+    padding:1.5% 0%;
+}
+#msg {
+    color:red;
+    font-size:20px;
+}
+.baskTit {
+    border: 2px solid red;
+    background-color: #ffffff;
+    width:100%;
+}
+#tableItem {
+    margin-top: 0px;
+    
+}

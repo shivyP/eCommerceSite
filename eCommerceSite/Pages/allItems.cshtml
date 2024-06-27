@@ -1,0 +1,62 @@
+﻿@page
+@model eCommerceSite.Pages.allItemsModel
+@{
+}
+<link rel="stylesheet" href="~/css/category.css" type="text/css" />
+<!--display all the items sold-->
+<h3> Shop all items</h3>
+
+<section id="allCategory">
+   
+    @if (Model.allItems != null && @Model.allItems.Count != 0 && User.IsInRole("Admin"))
+    {
+        @foreach (var item in Model.allItems)
+        {
+            if (!item.isDeleted)
+
+            {
+
+            <section class="categoryProduct">
+              
+                <h3>@item.Name</h3>
+                <img src="~/assets/@item.ProductImage" alt="Image of @item.Name" />
+                <p class="price">GBP£@item.Price  </p>
+                <p class="Vat">Vat @item.vat %</p>
+                <p class="desc">@item.Description</p>
+
+                <section>
+                    <p><a class="upDate" asp-page="/upDateItem" asp-route-id="@item.Id">Update</a></p>
+                    <p><a class="delete" id="delete" runat="server" asp-page="/allItems" asp-route-id="@item.Id" asp-page-handler="Delete">Delete</a></p>
+                    <a class="subButton" asp-page="/basketPage" asp-route-id=@item.Id asp-page-handler="Add">Add to Cart</a>
+                </section>
+      
+             </section>
+
+            }//end of if
+        }//end of foreach
+    }
+    else if(Model.allItems != null && @Model.allItems.Count != 0)
+    {
+    @foreach (var item in Model.allItems)
+    {
+        if (!item.isDeleted)
+
+        {
+
+            <section class="categoryProduct">
+
+                <h3>@item.Name</h3>
+                <img src="~/assets/@item.ProductImage" alt="Image of @item.Name" />
+                <p class="price">GBP£@item.Price</p>
+                <p class="desc">@item.Description</p>
+                <a class="subButton" asp-page="/basketPage" asp-route-id=@item.Id asp-page-handler="Add">Add to Cart</a>
+            </section>
+
+         }//end of if
+       }//end of foreach
+    }//end of else 
+else {
+    <p>No such items: @Model.search!</p>
+    }
+</section>
+

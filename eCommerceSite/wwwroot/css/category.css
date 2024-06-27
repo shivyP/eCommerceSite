@@ -1,0 +1,289 @@
+﻿#subCategories {
+    //border: 2px solid red;
+   /* width: 80%;
+    margin: 0 10%;*/
+    width:30%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin:auto;
+    padding:10px;
+    margin-top:2%;
+    
+}
+
+#subCategories img{
+    width:100px;
+    border-radius:100%;
+     padding-left:5px;
+
+}
+
+#subCategories img:hover, #subCategories p:hover{
+    cursor:pointer;
+    opacity:0.7;
+    transform:scale(1.1);
+
+
+}
+h3 ,h2{
+    margin-top:2%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Calibri Light",sans-serif;
+}
+#subCategories p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top:10px;
+}
+
+#allCategory {
+   // border: 2px solid red;
+    width: 84%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 1 25%;
+    //flex-direction: row;
+    gap: 50px;
+    margin: auto;
+    padding: auto;
+    margin-top: 5%;
+}
+.categoryProduct img {
+    width:60%;
+    margin-left:18%;
+    padding:auto;
+    //border:2px solid green;
+    max-width:60%;
+    min-width:60%;
+    min-height:200px;
+    max-height:200px;
+   
+    
+}
+
+.categoryProduct {
+    border: 1.8px solid #87cefa;
+    width: 20%;
+    padding: 5px 10px;
+    max-height: 200px;
+    min-height: 380px;
+}
+.categoryProduct  h5{
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top:5%;
+    font-weight:bold;
+   
+}
+.categoryProduct .price{
+   font-size:16px;
+   font-weight:bold;
+   font-style:normal;
+   margin-top:5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+   
+}
+.categoryProduct .desc{
+    margin-top:5px;
+    visibility:visible;
+    font-size:16px;
+    //font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-wrap:inherit;
+    
+}
+
+hr {
+    width: 80%;
+    margin: auto;
+    margin-top: 16px;
+    //margin-bottom: 12px;
+    background-color: #dac7cd;
+    height: 1px;
+    border: none;
+}
+.categoryProduct .subButton {
+    background-color: rgb(223, 204, 210,0.7);
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+    float: right;
+    border-color: aliceblue;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 6%;
+    margin-right: 10px;
+}
+.categoryProduct .subButton:hover {
+        /* opacity: 0.6; */
+        background-color: #7d51f5;
+        //background-color: hsl(223, 20%, 51%);
+}
+
+
+
+#addItems{
+    //border:2px solid red;
+    margin-top:2%;
+    padding:20px;
+}
+
+.inpField input{
+    border: none;
+    width: 98%;
+    padding: 12px 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    /* border:1px solid #ccc; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white; /*#69779a;*/
+}
+
+
+#addItems .inpField {
+    margin-top:12px;
+    font-size:16px;
+  
+}
+#logButton {
+    background-color: #87cefa;
+    font-size: 16px;
+    padding: 14px 20px;
+    float: right;
+    margin-left: 25%;
+    margin-top: 2%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+#logButton:hover {
+        opacity: 0.7;
+ }
+
+.text-danger {
+    color:red;
+}
+
+#manageUsers, #mUser {
+    width: 60%;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 4%;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    //background-color: #ffffff;
+    //border:2px solid red;
+
+}
+
+#manageUsers span a, #mUser a, .categoryProduct a {
+    font-family: "Calibri Light",sans-serif;
+    color: red;
+    font-style: italic;
+}
+
+.addRole button{
+    border:1px solid black;
+    
+}
+#manageUsers input, #mUser input {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    font-size: 15px;
+    height: 20px;
+    width: 20%;
+    margin-top:2%;
+}
+#manageUsers form label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style:italic;
+    padding-right:20px;
+    font-weight:bold;
+}
+#manageUsers button,  #mUser button{
+    background-color: rgb(223, 204, 210,0.7);
+    color: black;
+    font-size: 15px;
+    padding:4px  10px;
+    border-color: aliceblue;
+    border-radius: 10px;
+    cursor: pointer;
+   
+}
+#manageUsers th, #mUser th {
+    border-bottom:0.8px solid #87cefa;
+    padding:5px 0px;
+}
+.addRole {
+    padding-top: 10px;
+}
+/*tr, th, td {
+    border: 1px solid red;
+}*/
+#mUser {
+    width:68%;
+}
+#mUser input {
+    width:50%;
+}
+
+#aboutUS {
+    //border:1px solid red;
+    width:50%;
+    margin:auto;
+    display:flex;
+    flex-direction:row;
+    gap:5%;
+}
+.qImg {
+    //border:1px solid red;
+    margin:auto;
+}
+#aboutUS ul li {
+    list-style-position: outside;
+    list-style:disc;
+}
+
+#aDesc a img {
+    width: 10%;
+    //border: 2px solid red;
+}
+#aDesc ul li {
+    //border:1px solid red;
+    margin:0px;
+    padding:10px;
+    font-size:16px;
+    font-weight:bold;
+}
+#aDesc ul {
+    margin-top:4px;
+}
+#aDesc {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    //border:1px solid green;
+    padding:10px;
+    //border:1px solid green;
+}
+
+.ahr {
+    width:50%;
+}
+.categoryProduct section {
+    display:flex;
+    flex-direction:row;
+   gap:2%;
+   //border:2px solid red;
+}
+.categoryProduct section p {
+    display: flex;
+    flex-direction: row;
+    margin:auto;
+    font-weight:bold;
+}

@@ -1,0 +1,53 @@
+﻿@page
+@model eCommerceSite.Pages.upDateItemModel
+@{
+}
+<link rel="stylesheet" href="~/css/category.css" type="text/css" />
+<section id="addItems">
+    <h2>Update Items</h2>
+    <form method="post" asp-page="upDateItem">
+        <span class=" inpField">
+            <label asp-for="@Model.itemPro.Id">ID</label>
+            <input type="text" asp-for="@Model.itemPro.Id" readonly />
+        </span>
+        <br />
+        <br />
+        <span class=" inpField">
+            <label asp-for="@Model.itemPro.Name">Name</label>
+            <input type="text" asp-for="@Model.itemPro.Name" />
+        </span>
+        <br />
+        <br />
+        <span class=" inpField">
+
+            <label asp-for="@Model.itemPro.Description">Desciption</label>
+            <input type="text" asp-for="@Model.itemPro.Description" />
+        </span>
+        <br />
+        <br />
+        <span class=" inpField">
+            <label asp-for="@Model.itemPro.Price">Price </label>
+            <input type="text" asp-for="@Model.itemPro.Price" />
+        </span>
+        <br />
+        <br />
+        <span class=" inpField">
+
+            <label asp-for="@Model.itemPro.vat">Vat</label>
+            <input type="text" asp-for="@Model.itemPro.vat" />
+        </span>
+        <br />
+        <br />
+        <span class=" inpField">
+            <label asp-for="@Model.itemPro.ProductImage">Image</label>
+            <input type="text" asp-for="@Model.itemPro.ProductImage" />
+        </span>
+        <br />
+        <br />
+        <span class=" inpField">
+            <button type="submit" value="submit" id="logButton">Save</button>
+            <p id="msg1" class="msg-accepted">@ViewData["msg1"]</p>
+           
+        </span>
+    </form>
+</section>

@@ -1,0 +1,281 @@
+/*-----------------------------------------------*/
+/*    index page styling-> header and footer     */
+/*-----------------------------------------------*/
+*{
+    color:black;
+    margin: 0;
+    
+}
+
+body{
+    background-color: #FFFEFD;
+ 
+   
+}
+
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+li{
+    list-style-type:none;
+    padding:10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/*--------Slide Show---------*/
+#slideShow{
+    height:600px;
+    /*border:2px solid red;*/
+    margin-top: 1%; 
+    margin-left:1.8%;
+    /* background-color: turquoise; */
+
+}
+
+#slideShow img{
+    padding-left: 5%;
+    width:89%;
+    height: 610px;
+    margin:auto;
+    opacity: 1;
+    
+}
+
+.changeImage input{
+    display:none;
+    
+}
+.changeImage label{
+    border:2.5px solid black;
+    border-radius:20px;
+    font-size: 20px;
+    width:15px;
+    height:15px;
+    cursor: pointer;
+}
+.changeImage label:hover{
+    border-color: #0645AD;
+}
+#button1:checked + label,
+#button2:checked + label, 
+#button3:checked + label{
+    background-color:grey;
+}
+
+
+.changeImage{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin:auto;
+    margin-top:-50px;
+    padding:0;
+}
+
+
+/*---the description of images ----*/
+.descStyle {
+   position: absolute;
+   margin-top:-23%;
+   margin-left:30%;
+   /* background-color: rgb(0, 0, 0,0.4);  */
+   border-color: grey;
+   text-align: center;
+   padding-top:20px;
+   font-family: sans-serif;
+   /* border:2px solid red; */
+   width:34%;
+ 
+   
+}
+.descStyle h2{
+    
+    font-family: 'Moon Dance', cursive;
+    font-size:48px;
+}
+.descStyle *{
+    color:white;
+    font-size:18px;
+    font-family:'Nunito', sans-serif;
+    font-weight: bold;
+    
+}
+
+.desc{
+   visibility: hidden;
+
+}
+/* .descStyle span {
+     border:2px solid yellow; 
+    margin-left:20px;
+    margin-right:20px;
+} */
+
+.descStyle button{
+    width:30%;
+    padding:2%;
+    font-size: medium;
+    font-weight: bold;
+    border:2px solid #dfccd2b3;
+    margin:40px;
+    font-style:italic ;
+    cursor: pointer;
+    background-color:transparent;
+}
+.descStyle button:hover{
+    box-shadow: 0px 8px 20px  #000000;
+	transform:translateY(-7px);
+}
+#camera{
+    margin-top: -26%;
+    margin-left:32.2%;
+}
+#camera h2{
+    margin-left:-50px;
+}
+#audio{
+    margin-left:10%;
+    margin-top: -27%;
+    background-color:transparent;
+    color:#000000;
+    border:none;
+    
+}
+#audio *{
+    color:black;
+}
+
+#watch{
+    /* background-color: rgb(0, 0, 0,0.5);   */
+    margin-left:8%; 
+    width:31%;
+    margin-top: -25.5%; 
+    padding:15px;
+}
+#watch *{
+    color:white;
+    /* border:2px solid red; */
+   
+}
+#watch span *{
+    margin-left:20px;
+    margin-right:20px;
+}
+
+
+/*---------products display styling----------------*/
+#proDisplay{
+    width:63%;
+    /*background-color: lightcoral;*/
+    margin:5% auto;
+    display: grid;
+    grid-template-columns: repeat(4,22%);
+    grid-gap:2%;
+    align-content: center;
+    /* border: 1px solid red; */
+    font-size: 16px;
+    
+  
+}
+
+/* Trending items title */
+.trending{
+    grid-column: 1/5; /* combine the first row */
+    padding:5px;
+    margin-bottom:10px;
+    /* color:#21a6f8; */
+    color:red;
+
+    text-decoration: underline;
+    font-weight: bolder;
+    /* background-color: dodgerblue; */
+    font-family: 'Poppins', sans-serif;
+}
+
+.product{
+   /* border: 1px solid purple;   */
+    margin-left: 12px;
+    font-family:'Roboto', sans-serif;
+    font-weight: 500;
+    
+}
+.price{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.product img{
+    width:100%;
+    margin: auto;
+}
+.product p{
+    padding-top: 5px;
+    font-weight: 500;
+    padding-left: 3px;
+}
+
+/*---hover effect---*/
+.product img:hover{
+   /* width:105%;
+    transform: scaleZ(1.1);*/
+    transform: scale(1.1) ;
+    cursor: pointer;
+    box-shadow:0px 9px 20px  #7E9EC9; /*box-shadow: 0px 8px 20px  #000000;*/
+    outline: none;
+   
+}
+
+/*---subscribe-----*/
+#subscribe{
+    /* width:80%; */
+   
+    margin:10% auto 0% auto;
+    text-align: center;
+    padding:20px;
+    background-color: rgb(223, 204, 210,0.7);
+
+}
+#subscribe h1{
+    margin-bottom: 8px;
+    font-size: 30px;
+    font-family:  "Calibri Light",sans-serif;
+    line-height: 1.8;
+    font-weight: lighter;
+
+}
+#subscribe p{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+#emailSubButton, #emailSub{
+    border-radius: 0px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: none;
+    margin-top:5%;
+    margin-bottom:5%;
+    border:1px solid black;
+}
+#emailSub{
+    width:20%;
+    border-right: none;
+}
+#emailSubButton{
+    font-weight: bolder;
+    /* background-color: white; */
+    margin-left: -4px;
+}
+#emailSubButton:hover{
+    cursor: pointer;
+/*     
+    background-color: lemonchiffon; */
+}
+
+/*-- the content of the footer will be displayed in the width of 85%---*/
+
+/* 320px — 480px: */

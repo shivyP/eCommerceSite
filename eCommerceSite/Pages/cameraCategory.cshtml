@@ -1,0 +1,48 @@
+﻿@page
+@model eCommerceSite.Pages.cameraCategoryModel
+@{
+}
+
+<link rel="stylesheet" href="~/css/category.css" type="text/css" />
+<!--sub categories -->
+
+
+<h3> Shop cameras</h3>
+<section id="subCategories">
+
+    <a class="smart" asp-page="/computerCategory" asp-route-category="lens">
+        <img src="~/assets/lences.png" alt="Lences" />
+        <p>Lences</p>
+    </a>
+
+    <a class="smart" asp-page="/computerCategory" asp-route-category="camera">
+        <img src="~/assets/cameraCat.jpg" alt="Camera" />
+        <p>Cameras</p>
+    </a>
+    <a class="smart" asp-page="/computerCategory" asp-route-category="all">
+        <img src="~/assets/all.png" alt="All cameras and items" />
+        <p>All items</p>
+    </a>
+</section>
+<hr />
+<section id="allCategory">
+
+    <!--Display images-->
+    @foreach (var item in Model.items)
+    {
+        if (!item.isDeleted)
+        {
+
+    <section class="categoryProduct">
+
+        <img src="~/assets/@item.ProductImage" alt="Image of  @item.Name" />
+
+        <h5>@item.Name</h5>
+        <p class="price"> GBP£@item.Price</p>
+        <p class="Vat">Vat @item.vat %</p>
+        <p class="desc">@item.Description</p>
+        <a class="subButton" asp-page="/basketPage" asp-route-id=@item.Id asp-page-handler="Add">Add to Cart</a>
+    </section>
+        }
+    }
+</section>

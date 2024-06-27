@@ -1,0 +1,82 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "QTEC- Home";
+
+}
+
+
+<p id="msg" class="msg-accepted">@ViewData["msg"]</p>
+
+
+<script type="text/javascript" src="~/js/animation.js" defer></script>
+
+<!--Slide show -->
+<section id="slideShow">
+    <!-- <span class="previous" >&#8882;</span> -->
+    <img class="productCover" title="fisrtImage" src="assets/cameraCover3.jpg">
+    <!-- <span class="next">&#8883;</span> -->
+    <article class="changeImage fsize">
+        <input type="radio" id="button1" name="button">
+        <label for="button1"></label>
+        <input type="radio" id="button2" name="button">
+        <label for="button2"></label>
+        <input type="radio" id="button3" name="button">
+        <label for="button3"></label>
+    </article>
+
+    <section id="camera" class="descStyle ">
+        <h2>Capture your memories!</h2>
+        <button type="button">Discover more</button><br><!--Need to use a onlick event -->
+        <span>We have the best collection of high quality cameras in wide range of prices.</span>
+    </section>
+    <section id="audio" class="desc descStyle">
+        <h2>You hear what you want!</h2>
+        <button type="button">Discover more</button><br><!-- Need to use a onlick event  -->
+        <span>Look at our collection of devices specially designed to enchance your listening experince.</span>
+    </section>
+
+    <section id="watch" class="desc descStyle ">
+        <h2>An experince of new era!</h2>
+        <!-- <h2 class="secondH2">so spend it wisely!</h2> -->
+        <button type="button">Discover more</button><br> <!-- Need to use a onlick event  -->
+        <p>Discover our special collection of watches and find the one for you. </p>
+    </section>
+</section>
+
+
+<!--Html.Partial("_partialView_basket")-->
+
+
+<!--Trending items display -->
+<section id="proDisplay" class="fsize">
+    <h3 class="trending">Trending Items:</h3>
+ 
+    @foreach (var trend in Model.trend)
+    {
+        <section class="product">
+            <a asp-page="@trend.link">
+                <img src="~/assets/@trend.ProductImage" title="@trend.Name" alt="Image of @trend.Name ">
+                <p>@trend.Name</p>
+                <p class="price"><b>GBP£ @trend.Price</b></p>
+                <p class="price"><b>Vat @trend.vat%</b></p>
+            </a>
+        </section>
+    }
+
+
+</section>
+
+
+
+<section id="subscribe" class="fsize">
+    <h1>Stay in the loop</h1>
+    <p>
+        Be the first one to know about all <br>
+        the new products and exclusive deals <br>
+        droping evey month.
+    </p>
+
+    <input type="email" name="email" id="emailSub" placeholder="Enter your email">
+    <button type="button" id="emailSubButton">&#8594;</button>
+</section>
